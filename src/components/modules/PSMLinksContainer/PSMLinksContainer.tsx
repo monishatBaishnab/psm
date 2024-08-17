@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { linksData } from "../../../constants/links";
-const sections = ["ভিশন ও মিশন", "সাংগঠনিক কাঠামো", "কর্মকর্তাবৃন্দ", "কর্মবন্টন"];
 const PSMLinksContainer = () => {
     const [keys, setKeys] = useState<number[]>([]);
 
@@ -21,10 +20,16 @@ const PSMLinksContainer = () => {
     };
 
     const finalLargeKeysArray = extendArray(keys, 3);
-    const largeBottomBorderKeyArray = getBottomBorderArray(keys, 3);
+    const largeBottomBorderKeyArray =
+        finalLargeKeysArray[finalLargeKeysArray?.length-1] % 3 == 0
+            ? keys.slice(-3)
+            : getBottomBorderArray(keys, 2);
     const finalMediumKeysArray = extendArray(keys, 2);
-    const mediumBottomBorderKeyArray = getBottomBorderArray(keys, 2);
-    
+    const mediumBottomBorderKeyArray =
+        finalMediumKeysArray[finalMediumKeysArray?.length-1] % 2 == 0
+            ? keys.slice(-2)
+            : getBottomBorderArray(keys, 2);
+
     const getBorderClasses = (index: number) => {
         const lgRightBorder = !finalLargeKeysArray.includes(index);
         const lgBottomBorder = !largeBottomBorderKeyArray.includes(index);
@@ -62,12 +67,12 @@ const PSMLinksContainer = () => {
                                         {link.title}
                                     </h3>
                                     <div>
-                                        {sections?.map((section) => (
+                                        {link?.children?.map((section) => (
                                             <button
-                                                key={section}
-                                                className="text-slate-700 block text-center w-full transition-all hover:text-psm-success-500"
+                                                key={section.label}
+                                                className="text-slate-700 block text-center w-full transition-all hover:text-psm-success-500 border-b border-b-slate-200 border-dashed pb-1 mb-1 last:border-b-0"
                                             >
-                                                {section}
+                                                {section.label}
                                             </button>
                                         ))}
                                     </div>

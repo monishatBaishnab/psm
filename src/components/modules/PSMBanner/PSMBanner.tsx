@@ -17,8 +17,10 @@ import FTSelectItem from "../../ui/FTSelectItem";
 
 const PSMBanner = () => {
     return (
-        <div className={`bg-[url(https://i.ibb.co/cLMqsBy/asif-rahman-F5-U1hup-KYgw-unsplash-1-min.jpg)] bg-no-repeat bg-cover bg-bottom`}>
-            <div className="py-20 bg-white/40 backdrop-blur-sm">
+        <div
+            className={`bg-[url(https://i.ibb.co/cLMqsBy/asif-rahman-F5-U1hup-KYgw-unsplash-1-min.jpg)] bg-no-repeat bg-cover bg-bottom`}
+        >
+            <div className="md:py-20 bg-white/40 backdrop-blur-sm">
                 <div className="flex flex-col md:flex-row items-start gap-2 container">
                     <div className="w-full md:w-[calc(100%_-_256px)] h-full bg-white p-2 border border-slate-400">
                         <Swiper
@@ -35,7 +37,7 @@ const PSMBanner = () => {
                         >
                             <SwiperSlide className="h-full">
                                 <div className="h-[300px] w-full overflow-hidden relative">
-                                    <div className="absolute px-4 py-3 left-0 right-0 bottom-10 flex object-center justify-center text-psm-success-50 bg-psm-success-600/50 border border-psm-success-500">
+                                    <div className="absolute px-4 backdrop-blur-sm py-3 left-0 right-0 bottom-10 flex object-center justify-center text-psm-success-50 bg-psm-success-600/50 border border-psm-success-500">
                                         <h1 className="text-3xl  font-bold">
                                             পানি সম্পদ মন্ত্রণালয়
                                         </h1>
@@ -45,7 +47,7 @@ const PSMBanner = () => {
                             </SwiperSlide>
                             <SwiperSlide className="h-full">
                                 <div className="h-[300px] w-full overflow-hidden relative">
-                                    <div className="absolute px-4 py-3 left-0 right-0 bottom-10 flex object-center justify-center text-psm-success-50 bg-psm-success-600/50 border border-psm-success-500">
+                                    <div className="absolute px-4 backdrop-blur-sm py-3 left-0 right-0 bottom-10 flex object-center justify-center text-psm-success-50 bg-psm-success-600/50 border border-psm-success-500">
                                         <h1 className="text-3xl  font-bold">
                                             পানি সম্পদ মন্ত্রণালয়
                                         </h1>
@@ -55,7 +57,7 @@ const PSMBanner = () => {
                             </SwiperSlide>
                             <SwiperSlide className="h-full">
                                 <div className="h-[300px] w-full overflow-hidden relative">
-                                    <div className="absolute px-4 py-3 left-0 right-0 bottom-10 flex object-center justify-center text-psm-success-50 bg-psm-success-600/50 border border-psm-success-500">
+                                    <div className="absolute px-4 backdrop-blur-sm py-3 left-0 right-0 bottom-10 flex object-center justify-center text-psm-success-50 bg-psm-success-600/50 border border-psm-success-500">
                                         <h1 className="text-3xl  font-bold">
                                             পানি সম্পদ মন্ত্রণালয়
                                         </h1>
@@ -67,7 +69,13 @@ const PSMBanner = () => {
                     </div>
                     <div className="w-full md:w-64 space-y-3">
                         <div className="w-full h-full">
-                            <FTSelect size="lg" name="type_of_office" placeholder="অফিসের ধরন">
+                            <FTSelect
+                                aria-label="type_of_office"
+                                radius="none"
+                                size="lg"
+                                name="type_of_office"
+                                placeholder="অফিসের ধরন"
+                            >
                                 {[0, 1, 2, 3, 4, 5].map((item) => (
                                     <FTSelectItem key={item}>মন্ত্রনালয়/বিভাগ</FTSelectItem>
                                 ))}
@@ -94,6 +102,14 @@ const PSMBanner = () => {
                                 src={emergencyThree}
                             />
                         </button>
+                        <div className="w-full h-full">
+                            <audio controls={true} className="w-full">
+                                <source
+                                    src="https://mowr.gov.bd/sites/default/files/files/cabinet.portal.gov.bd/page/e5f25d4e_f0a7_4b2a_a07c_3ec69a793516/bd_national_anthem.mp3"
+                                    type="audio/mp3"
+                                />
+                            </audio>
+                        </div>
                     </div>
                 </div>
             </div>

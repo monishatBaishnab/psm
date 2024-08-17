@@ -23,7 +23,7 @@ const PSMNavbar = () => {
                             </button>
                         </div>
                         {menuItems?.map((item) => (
-                            <NavItem item={item} />
+                            <NavItem key={item.label} item={item} />
                         ))}
                     </div>
                     <SmallNav />

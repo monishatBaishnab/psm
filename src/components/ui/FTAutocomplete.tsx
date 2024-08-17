@@ -139,6 +139,7 @@ const FTAutocomplete = ({
                         <div className="w-full flex flex-wrap items-center gap-2">
                             {selectedKeys?.map((item) => (
                                 <Chip
+                                    key={item}
                                     className="bg-psm-success-100 text-psm-success-500 max-w-full"
                                     radius="sm"
                                     endContent={

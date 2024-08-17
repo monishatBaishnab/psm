@@ -5,10 +5,10 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import { IoIosArrowBack } from "react-icons/io";
 
 const SmallNav = () => {
-const { showSmallNavbar } = useContext(PSMNavbarContext);
+    const { showSmallNavbar } = useContext(PSMNavbarContext);
     return (
         <div
-            className={`container !py-5 absolute flex left-0 top-full bg-psm-success-600 transition-all w-full ${
+            className={`container !py-5 z-50 absolute flex left-0 top-full bg-psm-success-600 transition-all w-full ${
                 showSmallNavbar ? "visible opacity-100" : "invisible opacity-0"
             }`}
         >
@@ -22,13 +22,13 @@ const { showSmallNavbar } = useContext(PSMNavbarContext);
                         title={menuItem?.label}
                     >
                         {menuItem?.children?.map((subItem) => (
-                            <div className="cursor-auto text-left w-full">
+                            <div key={subItem.label} className="cursor-auto text-left w-full">
                                 <h5 className="px-4 py-3 block text-lg font-semibold text-psm-success-50">
                                     {subItem.label}
                                 </h5>
                                 {subItem?.items?.map((text) => {
                                     return (
-                                        <button className="text-left border-b text-psm-success-50 last:border-b-0 border-b-psm-success-500/70 px-4 py-2 w-full hover:bg-psm-success-700/40">
+                                        <button key={text} className="text-left border-b text-psm-success-50 last:border-b-0 border-b-psm-success-500/70 px-4 py-2 w-full hover:bg-psm-success-700/40">
                                             {text}
                                         </button>
                                     );

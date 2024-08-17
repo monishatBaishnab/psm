@@ -4,15 +4,7 @@ import PSMCard from "../components/ui/PSMCard";
 import PSMButton from "../components/ui/PSMButton";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import PSMLinksContainer from "../components/modules/PSMLinksContainer/PSMLinksContainer";
-import { BsDot } from "react-icons/bs";
-const featuresArray = [
-    "ওয়েবমেইল",
-    "অভিযোগ প্রতিকার ব্যবস্থা",
-    "Knowledge Repository",
-    "e-Requisition",
-    "Online Pay Bill",
-    "মতামত / পরামর্শ",
-];
+import PSMFooter from "../components/modules/PSMFooter/PSMFooter";
 
 const noticeData = [
     {
@@ -125,46 +117,21 @@ const Home = () => {
             <PSMLinksContainer />
 
             <div className="container !pt-3">
-                <div className=" grid grid-cols-1 md:grid-cols-6 gap-5">
-                    <div className="md:col-span-4 overflow-hidden">
-                        <div className="bg-psm-primary-500 py-3 px-5 rounded-t">
-                            <h4 className="text-psm-primary-50 text-lg font-semibold">
-                                জরুরি হটলাইন
-                            </h4>
-                        </div>
-                        <div className="flex items-center justify-center gap-x-5 flex-wrap mt-5">
-                            {hotlineImages?.map((image) => (
-                                <div key={image} className="w-28 h-full cursor-pointer">
-                                    <img
-                                        className="w-full h-full object-contain"
-                                        src={image}
-                                        alt=""
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                <div className="md:col-span-4 overflow-hidden">
+                    <div className="bg-psm-primary-500 py-3 px-5 rounded-t">
+                        <h4 className="text-psm-primary-50 text-lg font-semibold">জরুরি হটলাইন</h4>
                     </div>
-                    <div className="md:col-span-2">
-                        <div className="bg-white rounded overflow-hidden">
-                            <div className="bg-psm-success-500 py-3 px-5">
-                                <h4 className="text-psm-success-50 text-lg font-semibold">
-                                    অভ্যন্তরীণ ই-সেবাসমূহ
-                                </h4>
+                    <div className="flex items-center justify-center gap-x-5 flex-wrap mt-5">
+                        {hotlineImages?.map((image) => (
+                            <div key={image} className="w-28 h-full cursor-pointer">
+                                <img className="w-full h-full object-contain" src={image} alt="" />
                             </div>
-                            <div className="space-y-1 p-5">
-                                {featuresArray?.map((feature) => (
-                                    <div key={feature} className="flex items-center gap-1">
-                                        <BsDot />
-                                        <button className="block transition-all hover:underline hover:underline-offset-2 hover:text-psm-success-500">
-                                            {feature}
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
+
+            <PSMFooter />
         </div>
     );
 };
